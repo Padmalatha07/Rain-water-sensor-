@@ -1,0 +1,25 @@
+const int rainSensorPin = A0;
+const int ledPin = 2;
+const int buzzerPin = 4;
+const int thresholdValue = 500;
+void setup() {
+pinMode(rainSensorPin, INPUT);
+pinMode(ledPin, OUTPUT);
+pinMode(buzzerPin, OUTPUT);
+Serial.begin(9600);
+}
+void loop() {
+int sensorValue = analogRead(rainSensorPin);
+Serial.print("Rain Sensor Value: ");
+Serial.print(sensor Value);
+if (sensorValue < thresholdValue) {
+Serial.println(" Rain Detected!");
+digitalWrite(ledPin, HIGH);
+digitalWrite(buzzerPin, HIGH);
+} else {
+Serial.println(" No Rain");
+digitalWrite(ledPin, LOW);
+digitalWrite(buzzerPin, LOW);
+}
+delay(1000);
+}
